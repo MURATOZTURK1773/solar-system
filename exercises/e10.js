@@ -6,6 +6,8 @@ import { data } from "../data/data";
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
+  const randomAsteroid = data.asteroids.find(elm => elm.name.includes(asteroidName));
+  return randomAsteroid;
 }
 
 

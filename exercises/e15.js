@@ -6,6 +6,10 @@ import { data } from "../data/data";
 
 export function getPlanetsWithNoMoons(data) {
   // Your code goes here...
+  const arr1 = data.planets.filter(elm => elm.hasOwnProperty("moonsCount") == 0).map(elm => elm.name);
+  return arr1;
+  // if (data.planets.filter(elm => elm.hasOwnProperty("moonsCount")) == 0) {}
+  // return data.planets.map(elm => elm.name);
 }
 
 

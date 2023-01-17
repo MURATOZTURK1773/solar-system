@@ -7,6 +7,26 @@ import { data } from "../data/data";
 export function getGreatestDiscoveryYear(data) {
   // Your code goes here...
   // feel free to import your `maxBy` or `minBy` methods from previous lessons
+  let findDiscoveryYears = data.asteroids.map(asteroid => asteroid.discoveryYear);
+
+  let yearCount = {};
+  findDiscoveryYears.forEach(i => {
+    if (yearCount[i]) {
+      yearCount[i]++;
+    } else {
+      yearCount[i] = 1;
+    }
+  });
+
+  let mostCommonYear;
+  let highestCount = 0;
+  for(let i in yearCount) {
+    if (yearCount[i] > highestCount) {
+      mostCommonYear = i;
+      highestCount = yearCount[i];
+    }
+  }
+  return Number(mostCommonYear);
 }
 
 // === TEST YOURSELF ===
