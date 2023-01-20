@@ -7,8 +7,7 @@ import { data } from "../data/data";
 export function getPlanetsNamesWithMoons(data) {
   // Your code goes here...
   // const planetWithMoons = data.planets.filter(elm => elm.moonsCount >= 1).map(elm => elm.name);
-  const planetWithMoons = data.planets.filter(elm => elm.hasOwnProperty("moons")).map(elm => elm.name);
-  return planetWithMoons;
+  return data.planets.filter(elm => elm.hasOwnProperty("moons")).map(elm => elm.name);
 }
 
 

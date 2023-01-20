@@ -7,5 +7,4 @@ export function find(array, callback) {
         return array[i];
       }
     }
-    return undefined;
 }

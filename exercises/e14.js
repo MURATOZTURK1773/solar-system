@@ -6,11 +6,13 @@ import { data } from "../data/data";
 
 export function getOrbitalPeriodsSum(data) {
   // Your code goes here...
-  const arr1 = data.asteroids.filter(elm => elm.hasOwnProperty("orbitalPeriod")).map(elm => elm.orbitalPeriod);
-  const sum = arr1.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-  return sum;
+  return data.asteroids.reduce((acc, elm) => {
+    if (elm.hasOwnProperty("orbitalPeriod")) {
+      acc += elm.orbitalPeriod;
+    }
+    return acc;
+  }, 0);
 }
-
 
 
 // === TEST YOURSELF ===
